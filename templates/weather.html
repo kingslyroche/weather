@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Weather Now</title>
+      <link rel="shortcut icon" href="/static/sun.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="/static/weather.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="center">
+         
+
+         <h1> What's the weather?</h1>
+
+
+
+         {% with messages = get_flashed_messages(with_categories=true) %}
+           {% if messages %}
+             {% for category, message in messages %}
+               <div class="alert alert-{{ category }}">
+                  {{ message }}
+               </div>
+             {% endfor %}
+           {% endif %}
+         {% endwith %}
+
+
+
+         <form method="POST">
+            <input id="city" name="city" type="text" placeholder="City Name">
+            <button class="btn">
+               Find!
+            </button>
+         </form>
+      </div>
+
+      {% for x in weather_data%}
+      <div class="card" style="background-image: url('/static/{{x.bg_img}}');">
+         <ul class="list-inline">
+            <li>
+               <img src="/static/{{x.icon_img}}" alt="icon" />
+            </li>
+            <li>
+              {{x.desc}}
+            </li>
+         </ul>
+         <h1>{{x.temp}}</h1>
+         <p class="city ">{{x.city}}</p>
+      </div>
+      {%endfor%}
+   </body>
+</html>
