@@ -6,5 +6,14 @@ It uses Open weather API.
 
 Deployed to Heroku : https://secure-thicket-13838.herokuapp.com/
 
+flask,python.
 
+
+------------------------------------------------------------------------------------------------------------
+
+#things to be added
+
+1.database 
+2.sessions
+3.display more info
 
