@@ -4,7 +4,7 @@ A Simple flask app for checking weather.
 
 It uses Open weather API.
 
-Deployed to Heroku : https://weatherappx.herokuapp.com/
+Deployed [Here](http://kingslyroche.pythonanywhere.com/)
 
 flask,python.
 
